@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260" role="img" aria-label="snipbox - a tiny CLI snippet manager">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e1116"/>
+      <stop offset="100%" stop-color="#1b1530"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .t { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .m { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+    .cursor { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .box { animation: bob 3.5s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    .lid { transform-box: fill-box; transform-origin: left bottom; animation: lid 3.5s ease-in-out infinite; }
+    @keyframes lid { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(-8deg); } }
+    .snip { opacity: 0; animation: drop 6s ease-in-out infinite; }
+    .s2 { animation-delay: 1s; }
+    .s3 { animation-delay: 2s; }
+    @keyframes drop {
+      0%   { opacity: 0; transform: translateY(-14px); }
+      12%  { opacity: 1; transform: translateY(0); }
+      85%  { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(8px); }
+    }
+    .tag { animation: tagp 3s ease-in-out infinite; }
+    @keyframes tagp { 0%,100% { opacity: .7; } 50% { opacity: 1; } }
+  </style>
+
+  <rect width="900" height="260" rx="18" fill="url(#bg)"/>
+  <rect x="1" y="1" width="898" height="258" rx="17" fill="none" stroke="#2d2548"/>
+
+  <!-- box icon -->
+  <g class="box" transform="translate(80,60)">
+    <rect x="0" y="34" width="110" height="90" rx="12" fill="#231c3d" stroke="#a78bfa" stroke-width="4"/>
+    <g class="lid">
+      <rect x="-8" y="10" width="126" height="28" rx="9" fill="#a78bfa"/>
+    </g>
+    <rect x="38" y="58" width="34" height="8" rx="4" fill="#a78bfa" opacity=".8"/>
+    <text class="m" x="22" y="102" font-size="22" font-weight="700" fill="#ffffff">&lt;/&gt;</text>
+  </g>
+
+  <!-- title -->
+  <text class="t" x="230" y="118" font-size="58" font-weight="800" fill="#ffffff">snipbox</text>
+  <text class="t" x="232" y="156" font-size="19" fill="#b9a9f0">Save, tag, search and copy snippets from your terminal</text>
+  <text class="m" x="232" y="196" font-size="14" fill="#7f70b3">zero dependencies  ·  one JSON file</text>
+
+  <!-- floating snippets -->
+  <g class="snip">
+    <rect x="620" y="40" width="250" height="46" rx="10" fill="#1a1530" stroke="#2d2548"/>
+    <text class="m" x="634" y="68" font-size="12.5" fill="#e9e4ff">git reset --soft HEAD~1</text>
+    <rect class="tag" x="818" y="52" width="40" height="20" rx="10" fill="#a78bfa"/>
+    <text class="t" x="838" y="66" font-size="10" font-weight="700" fill="#1a1530" text-anchor="middle">git</text>
+  </g>
+  <g class="snip s2">
+    <rect x="620" y="102" width="250" height="46" rx="10" fill="#1a1530" stroke="#2d2548"/>
+    <text class="m" x="634" y="130" font-size="12.5" fill="#e9e4ff">docker system prune -af</text>
+    <rect class="tag" x="800" y="114" width="58" height="20" rx="10" fill="#60a5fa"/>
+    <text class="t" x="829" y="128" font-size="10" font-weight="700" fill="#0e1116" text-anchor="middle">docker</text>
+  </g>
+  <g class="snip s3">
+    <rect x="620" y="164" width="250" height="46" rx="10" fill="#1a1530" stroke="#2d2548"/>
+    <text class="m" x="634" y="192" font-size="12.5" fill="#e9e4ff">snipbox copy 1</text>
+    <rect class="cursor" x="742" y="180" width="7" height="15" fill="#a78bfa"/>
+  </g>
+</svg>
